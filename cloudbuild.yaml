@@ -29,7 +29,7 @@ steps:
 
 options:
   pool:
-    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3'
+    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3demo'
   logging: CLOUD_LOGGING_ONLY
   
 
