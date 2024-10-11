@@ -5,8 +5,6 @@ steps:
     args: ['clean', 'install', '-DskipTests']
 
   # add private pool 
-- name: 'bash'
-  args: ['echo', 'I am running in a private pool!']
 options:
   pool:
     name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3'
