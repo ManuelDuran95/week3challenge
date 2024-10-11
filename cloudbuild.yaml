@@ -29,7 +29,7 @@ steps:
 options:
   logging: CLOUD_LOGGING_ONLY
   pool:
-    name: 'projects/$PROJECT_ID/locations/us-central1/workerPools/week3'
+    name: 'projects/$WORKERPOOL_PROJECT_ID/locations/$REGION/workerPools/week3'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
