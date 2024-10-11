@@ -27,9 +27,8 @@ steps:
       - 'managed'
 
 options:
-  logging: CLOUD_LOGGING_ONLY
   pool:
-    name: 'projects/$_WORKERPOOL_PROJECT_ID/locations/$REGION/workerPools/week3'
+    name: 'projects/manuelmata-dev/locations/$REGION/workerPools/week3'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
