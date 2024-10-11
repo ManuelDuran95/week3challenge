@@ -1,3 +1,11 @@
+# Define private pool configuration (replace placeholders)
+privatePool:
+  name: week3
+  location: us-central1
+  machineType: e2-standard-32
+  diskSize: 100GB
+  network: default
+  
 steps:
   # Build the application using Maven
   - name: 'maven'
