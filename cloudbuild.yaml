@@ -4,11 +4,6 @@ steps:
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
 
-  # add private pool 
-options:
-  pool:
-    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3'
-
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
@@ -33,6 +28,8 @@ options:
 
 options:
   logging: CLOUD_LOGGING_ONLY
+  pool:
+    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
