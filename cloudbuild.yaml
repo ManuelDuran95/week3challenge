@@ -4,6 +4,13 @@ steps:
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
 
+  # add private pool 
+- name: 'bash'
+  args: ['echo', 'I am running in a private pool!']
+options:
+  pool:
+    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3'
+
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
