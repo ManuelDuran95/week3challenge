@@ -28,8 +28,6 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  pool:
-    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
