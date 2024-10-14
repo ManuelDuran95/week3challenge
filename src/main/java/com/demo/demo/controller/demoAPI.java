@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class demoAPI {
     @GetMapping("/greet/{name}")
     public String greet(@PathVariable String name){
-        return "Hello v2 hsfgdsdgfskldfgd"+name;
+        return "Hello "+name + "APIv3";
     }
 }
