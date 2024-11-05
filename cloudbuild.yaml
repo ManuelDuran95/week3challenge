@@ -28,9 +28,8 @@ steps:
       - 'managed'
 
 options:
-  pool:
-    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/week3demo'
   logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_MEDIUM'
   
 
 images:
