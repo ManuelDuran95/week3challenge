@@ -15,6 +15,6 @@ public class demoAPI {
       
 
         System.out.println("Variable from properties" + demoVar); 
-        return "Hello "+name + "APIv3" +demoVar;
+        return "Hello "+name + "APIv3.5" +demoVar;
     }
 }
