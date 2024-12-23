@@ -10,11 +10,17 @@ public class demoAPI {
     @Value("${test.variable}")
     private String demoVar;
 
-    @GetMapping("/greet/{name}")
-    public String greet(@PathVariable String name){
-      
+   @GetMapping("/greet/{name}")
+    public Map<String, String> greet(@PathVariable String name) {
+        System.out.println("Variable from properties: " + demoVar);
 
-        System.out.println("Variable from properties" + demoVar); 
-        return "Hello "+name + "APIv5.5" +demoVar;
+        // Mock user information
+        Map<String, String> userInfo = new HashMap<>();
+        userInfo.put("name", name);
+        userInfo.put("greeting", "Hello " + name + " APIv5.5 " + demoVar);
+        userInfo.put("email", name.toLowerCase() + "@example.com");
+        userInfo.put("id", "12345");
+
+        return userInfo;
     }
 }
