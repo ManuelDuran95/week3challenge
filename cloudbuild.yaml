@@ -29,7 +29,6 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  machineType: 'e2-standard-16'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
