@@ -21,8 +21,13 @@ public class demoAPI {
         userInfo.put("name", name);
         userInfo.put("greeting", "Hello " + name + " APIv5.5 " + demoVar);
         userInfo.put("email", name.toLowerCase() + "@example.com");
-        userInfo.put("id", "12345");
+        userInfo.put("id", generateRandomNumber());
 
         return userInfo;
+    }
+
+     public int generateRandomNumber() {
+        Random random = new Random();
+        return random.nextInt(100); // Generates a random number between 0 and 99
     }
 }
