@@ -10,7 +10,7 @@ steps:
 
   # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-west1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA']
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA']
   - name: "bash"
     script: echo "I am running in a private pool! v2"
   # Deploy the container image to Cloud Run
@@ -21,7 +21,7 @@ steps:
       - 'deploy'
       - '$_SERVICE_NAME'
       - '--image'
-      - 'us-west1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
       - '--region'
       - '$_DEPLOY_REGION'
       - '--platform'
@@ -29,7 +29,7 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  machineType: 'e2-standard-2'
+  machineType: 'E2-STADARD-2'
   
 
 images:
