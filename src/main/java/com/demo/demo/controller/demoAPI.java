@@ -21,7 +21,7 @@ public class demoAPI {
         userInfo.put("name", name);
         userInfo.put("greeting", "Hello " + name + " APIv5.5 " + demoVar);
         userInfo.put("email", name.toLowerCase() + "@example.com");
-        userInfo.put("id", generateRandomNumber());
+        userInfo.put("id", String.valueOf(generateRandomNumber()));
 
         return userInfo;
     }
