@@ -27,8 +27,8 @@ steps:
       - '--platform'
       - 'managed'
 
-#options:
- # logging: NONE
+options:
+  logging: CLOUD_LOGGING_ONLY
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
