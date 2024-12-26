@@ -17,7 +17,7 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
-      - 'run'
+      - 'run3'
       - 'deploy'
       - '$_SERVICE_NAME'
       - '--image'
