@@ -20,7 +20,7 @@ public class demoAPI {
         // Mock user information
         Map<String, String> userInfo = new HashMap<>();
         userInfo.put("name", name);
-        userInfo.put("greeting", "Hello " + name + " APIv5.5 " + demoVar);
+        userInfo.put("greeting", "Hello " + name + " APIv6.5 " + demoVar);
         userInfo.put("email", name.toLowerCase() + "@example.com");
         userInfo.put("id", String.valueOf(generateRandomNumber()));
 
