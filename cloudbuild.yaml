@@ -29,7 +29,7 @@ steps:
 logsBucket: 'gs://logs-bucket-demo'
 options:
   logging: GCS_ONLY
-  machineType: e2-highcpu-32
+  machineType: E2-HIGHCPU-8
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
