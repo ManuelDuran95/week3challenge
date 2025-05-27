@@ -6,7 +6,7 @@ steps:
 
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.', ' --machine-type=E2_HIGHCPU_8']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.', '--machine-type=E2_HIGHCPU_8']
 
   # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
