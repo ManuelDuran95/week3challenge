@@ -6,8 +6,8 @@ steps:
 
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    env:
-      - 'DEMO_API=${_DEMO_API}'
+     env:
+      - 'DB_USERNAME=${_DB_USERNAME}'
     args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
 
   # Push the container image to Artifact Registry
