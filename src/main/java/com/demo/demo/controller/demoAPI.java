@@ -10,7 +10,7 @@ import java.util.Random;
 
 @RestController("/api")
 public class demoAPI {
-    @Value("${test.variable}")
+    @Value("${test.variable:default}")
     private String demoVar;
 
    @GetMapping("/greet/{name}")
