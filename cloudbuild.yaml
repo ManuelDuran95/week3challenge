@@ -1,6 +1,8 @@
 steps:
   # Build the application using Maven
   - name: 'maven'
+    env:
+      - 'DB_USERNAME=$_DB_USERNAME'
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
 
