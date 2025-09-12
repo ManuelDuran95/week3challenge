@@ -35,6 +35,8 @@ steps:
 logsBucket: 'gs://logs-bucket-demo'
 options:
   logging: GCS_ONLY
+  pool:
+    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/private-pool-with-nat'
   #machineType: 'e2-highcpu-32'
 
 images:
