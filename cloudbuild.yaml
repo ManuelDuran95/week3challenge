@@ -11,7 +11,6 @@ steps:
           echo "DNS lookup failed for domain.com"
           exit 1
         fi
-     id: 'dns-check'
     
   # Build the application using Maven
   - name: 'maven'
