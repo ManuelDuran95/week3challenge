@@ -36,8 +36,8 @@ steps:
       - 'managed'
       
   - name: 'alpine'
-     entrypoint: 'sh'
-     args: 
+    entrypoint: 'sh'
+    args:
       - '-c'
       - |
         apk add --no-cache bind-tools
@@ -47,7 +47,7 @@ steps:
           echo "DNS lookup failed for domain.com"
           exit 1
         fi
-     id: 'dns-check'
+    id: 'dns-check'
 logsBucket: 'gs://logs-bucket-demo'
 options:
   logging: GCS_ONLY
