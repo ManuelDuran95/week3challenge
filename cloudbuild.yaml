@@ -1,40 +1,4 @@
-steps:
-   # Build the application using Maven
-  - name: 'maven'
-    entrypoint: 'mvn'
-    args: ['clean', 'install', '-DskipTests']
-
-  # Build the container image
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
-  - name: 'gcr.io/cloud-builders/git'
-    entrypoint: 'bash'
-    args:
-        - '-c'
-        - |
-          git clone -b main https://github.com/ManuelDuran95/nodehello-1.git
-          cd REPO_NAME
-          echo "Cloned branch BRANCH_NAME successfully."
-
-  # Push the container image to Artifact Registry
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA']
-  - name: "bash"
-    script: echo "I am running in a private pool! v2"
-  # Deploy the container image to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args:
-      - 'run'
-      - 'deploy'
-      - '$_SERVICE_NAME'
-      - '--image'
-      - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
-      - '--region'
-      - '$_DEPLOY_REGION'
-      - '--platform'
-      - 'managed'
-      
+steps:   
   - name: 'alpine'
     entrypoint: 'sh'
     args:
@@ -53,7 +17,3 @@ options:
   logging: GCS_ONLY
   pool:
     name: 'projects/manuelmata-dev/locations/us-central1/workerPools/private-pool-with-nat'
-  #machineType: 'e2-highcpu-32'
-
-images:
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
