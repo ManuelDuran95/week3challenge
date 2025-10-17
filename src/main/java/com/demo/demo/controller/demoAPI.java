@@ -34,7 +34,7 @@ public class demoAPI {
     public Map<String, String> test411(@PathVariable String name) {
          Map<String, String> userInfo = new HashMap<>();
         userInfo.put("name", name);
-        userInfo.put("greeting", "Hello " + name + " APIv6.5 " + demoVar);
+        userInfo.put("greeting", "Hello " + name + " APIv7.5 " + demoVar);
         userInfo.put("email", name.toLowerCase() + "@example.com");
         userInfo.put("id", String.valueOf(generateRandomNumber()));
         return userInfo;
