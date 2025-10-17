@@ -38,9 +38,9 @@ steps:
 logsBucket: 'gs://example-from-terraform-demo-1'
 options:
   logging: GCS_ONLY
-pool:
-   name: 'projects/manuelmata-dev/locations/us-central1/workerPools/private-pool-with-nat'
-  #machineType: 'e2-highcpu-32'
+  pool:
+    name: 'projects/manuelmata-dev/locations/us-central1/workerPools/private-pool-with-nat'
+     #machineType: 'e2-highcpu-32'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA'
