@@ -4,18 +4,6 @@ steps:
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
 
-  # Build the container image
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
-  - name: 'gcr.io/cloud-builders/git'
-    entrypoint: 'bash'
-    args:
-        - '-c'
-        - |
-          git clone -b main https://github.com/ManuelDuran95/nodehello-1.git
-          cd REPO_NAME
-          echo "Cloned branch BRANCH_NAME successfully."
-
   # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA']
