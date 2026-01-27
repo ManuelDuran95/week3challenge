@@ -41,6 +41,13 @@ public class demoAPI {
 
     }
     
+    @GetMapping("/check/ready")
+    public Map<String, String> checkReady() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "UP");
+        response.put("message", "Application is ready to handle requests");
+        return response;
+    }
     
 
      public int generateRandomNumber() {
