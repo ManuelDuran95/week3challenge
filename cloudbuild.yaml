@@ -3,6 +3,9 @@ steps:
   - name: 'maven'
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
+# 2.Build the Docker container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
 
   # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
