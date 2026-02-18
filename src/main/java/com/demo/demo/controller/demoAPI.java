@@ -25,7 +25,7 @@ public class demoAPI {
         Map<String, String> userInfo = new HashMap<>();
         userInfo.put("name", name);
         userInfo.put("greeting", "Hello " + name + " APIv6.5 " + demoVar);
-        userInfo.put("email", name.toLowerCase() + "@example.com");
+        userInfo.put("email", name.toLowerCase() + "@example1.com");
         userInfo.put("id", String.valueOf(generateRandomNumber()));
 
         return userInfo;
